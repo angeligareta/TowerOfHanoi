@@ -14,8 +14,10 @@ public class JTestPegTypes {
 
 	@Before
 	public void setUp() throws Exception {
-		pegArray = new ArrayTypePeg(3);
-		pegStack = new StackTypePeg(3);
+		pegArray = new ArrayTypePeg();
+		pegStack = new StackTypePeg();
+		pegArray.initializePeg(3);
+		pegStack.initializePeg(3);
 	}
 
 	@Test
@@ -57,14 +59,8 @@ public class JTestPegTypes {
 		ArrayTypePeg pegArray2 = new ArrayTypePeg();
 		assert(pegArray2.isEmpty());
 		
-		ArrayTypePeg pegArray3 = new ArrayTypePeg(0);
-		assert(pegArray3.isEmpty());
-		
 		StackTypePeg pegStack2 = new StackTypePeg();
 		assert(pegStack2.isEmpty());
-		
-		StackTypePeg pegStack3 = new StackTypePeg(0);
-		assert(pegStack3.isEmpty());
 	}
 
 }

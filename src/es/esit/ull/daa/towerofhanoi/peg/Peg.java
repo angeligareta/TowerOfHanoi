@@ -7,6 +7,7 @@
  */
 package es.esit.ull.daa.towerofhanoi.peg;
 
+import java.awt.Graphics;
 import java.util.AbstractList;
 
 import es.esit.ull.daa.towerofhanoi.peg.disk.Disk;
@@ -16,23 +17,33 @@ import es.esit.ull.daa.towerofhanoi.peg.disk.Disk;
  */
 public abstract class Peg {
 	
+	public final static int width = 250;
+	public final static int height = 400;
+	
 	protected AbstractList<Disk> peg; 
+	private char pegID;
 	
 	public Peg(AbstractList<Disk> peg) { 
-		this.peg = peg; 
+		this.peg = peg;
+		this.pegID = 'X';
 	}
 	
-	public Peg(AbstractList<Disk> peg, int numberOfDisks) {
+	public Peg(AbstractList<Disk> peg, char pegID) { 
 		this.peg = peg;
-		
-		while (numberOfDisks > 0 ) {
-			this.push(new Disk(numberOfDisks--));
-		}
+		this.pegID = pegID;
 	}
+	
+	public abstract void initializePeg(int numberOfDisks);
+	
+	public abstract void draw(Graphics g, int x, int y);
 	
 	public abstract Disk pop();
 	
 	public abstract void push(Disk disk);
 	
 	public abstract boolean isEmpty();
+
+	public char getID() {
+		return pegID;
+	}
 }
