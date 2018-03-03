@@ -91,6 +91,8 @@ public class TowerOfHanoi extends JPanel {
 			this.repaint();
 			paintComponent(this.getGraphics());
 			Thread.sleep(1500);
+			
+			System.out.println(System.lineSeparator() + "\t**MOVEMENTS**");
 		}
 
 		moveDisks(this.numberOfDisks, this.sourcePeg, this.auxiliaryPeg, this.destinationPeg);
