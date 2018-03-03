@@ -18,7 +18,6 @@ import es.esit.ull.daa.towerofhanoi.peg.*;
  */
 public class TowerOfHanoi extends JPanel {
 	
-
 	private Peg originPeg;
 	private Peg auxiliarPeg;
 	private Peg destinationPeg;
