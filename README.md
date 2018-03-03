@@ -1,9 +1,6 @@
-# Assignment structure
+# Towers Of Hanoi
 
-This directory is organised as follows:
+## Description
 
-      .
-      ├── bib          # Assignment bibliography
-      ├── report       # LaTeX template for the report
-      ├── slides       # LaTeX Beamer template for the slides
-      ├── src          # Source code
+## Author
+[Ángel Igareta](https://github.com/angeligareta)
