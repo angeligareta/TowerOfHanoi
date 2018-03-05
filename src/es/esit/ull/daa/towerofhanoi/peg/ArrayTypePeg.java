@@ -44,11 +44,14 @@ public class ArrayTypePeg extends Peg {
 	@Override
 	public void initializePeg(int numberOfDisks) {
 		int totalNumberOfDisks = numberOfDisks;
+		int proportionSize = Peg.width / totalNumberOfDisks;
+		
+		for (int i = totalNumberOfDisks; i > 0; --i) {
+			this.push(new Disk(i, i * proportionSize,
+			Peg.height / totalNumberOfDisks));
 
-		for (int i = numberOfDisks; i > 0; --i) {
-			this.push(new Disk(numberOfDisks, Peg.width / (totalNumberOfDisks - numberOfDisks + 1),
-					Peg.height / totalNumberOfDisks));
-			numberOfDisks--;
+//			this.push(new Disk(i, Peg.width / (totalNumberOfDisks - i + 1),
+//					Peg.height / totalNumberOfDisks));
 		}
 	}
 
@@ -109,9 +112,9 @@ public class ArrayTypePeg extends Peg {
 		g2.drawLine(midWidth, minHeight, midWidth, maxHeight); // Peg
 		g.setColor(Color.BLACK);
 
-		for (int i = peg.size(); i > 0; --i) {
+		for (int i = 1; i <= peg.size(); ++i) {
 			peg.get(i - 1).draw(g, minWidth + ((Peg.width - peg.get(i - 1).getWidth()) / 2),
-					minHeight - ((peg.size() - i + 1) * peg.get(i - 1).getHeight()));
+					minHeight - (i * peg.get(i - 1).getHeight()));
 		}
 	}
 

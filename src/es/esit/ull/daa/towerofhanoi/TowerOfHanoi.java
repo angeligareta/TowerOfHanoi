@@ -156,15 +156,8 @@ public class TowerOfHanoi extends JPanel {
 		if (numberOfDisks == 1) {
 			numberOfMovements++;
 			destinationPeg.push(sourcePeg.pop());
-
-			if (debug) {
-				paintComponent(this.getGraphics());
-				this.getGraphics().drawString(sourcePeg.getID() + " -> " + destinationPeg.getID(), (panelWidth / 2) - 20, 150);
-				System.out.println(numberOfMovements + " movement is: " + sourcePeg.getID() + " -> " + destinationPeg.getID());
-
-				this.repaint();
-				Thread.sleep(1000);
-			}
+			
+			if (debug) { showPegs(sourcePeg.getID(), destinationPeg.getID()); }
 		}
 		else {
 			moveDisks(numberOfDisks - 1, sourcePeg, destinationPeg, auxiliaryPeg);
@@ -172,9 +165,21 @@ public class TowerOfHanoi extends JPanel {
 			// moveDisks(1, sourcePeg, auxiliaryPeg, destinationPeg);
 			destinationPeg.push(sourcePeg.pop());
 			numberOfMovements++;
-
+			if (debug) { showPegs(sourcePeg.getID(), destinationPeg.getID()); }
+			
 			moveDisks(numberOfDisks - 1, auxiliaryPeg, sourcePeg, destinationPeg);
 		}
+		
+		
+	}
+	
+	private void showPegs(char sourceID, char destinationID) throws InterruptedException {
+		paintComponent(this.getGraphics());
+		this.getGraphics().drawString(sourceID + " -> " + destinationID, (panelWidth / 2) - 20, 150);
+		System.out.println(numberOfMovements + " movement is: " + sourceID + " -> " + destinationID);
+
+		this.repaint();
+		Thread.sleep(1000);
 	}
 
 }

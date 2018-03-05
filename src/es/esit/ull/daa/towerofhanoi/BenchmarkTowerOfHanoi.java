@@ -50,7 +50,7 @@ public class BenchmarkTowerOfHanoi {
 			int numberOfTests = Integer.parseInt(args[0]);
 			int maxNumberOfDisks = Integer.parseInt(args[1]);
 
-			for (int i = 25; i <= maxNumberOfDisks; ++i) {
+			for (int i = 1; i <= maxNumberOfDisks; ++i) {
 				long elapsedTimeWithArray = 0;
 				long elapsedTimeWithStack = 0;
 
