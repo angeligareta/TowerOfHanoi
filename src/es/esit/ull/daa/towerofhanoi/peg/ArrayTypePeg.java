@@ -59,8 +59,8 @@ public class ArrayTypePeg extends Peg {
 	 */
 	@Override
 	public Disk pop() {
-		Disk disk = peg.get(0);
-		peg.remove(0);
+		Disk disk = peg.get(peg.size() - 1);
+		peg.remove(peg.size() - 1);
 
 		return disk;
 	}
@@ -74,7 +74,7 @@ public class ArrayTypePeg extends Peg {
 	 */
 	@Override
 	public void push(Disk disk) {
-		peg.add(0, disk);
+		peg.add(disk);
 	}
 
 	/*

@@ -61,12 +61,20 @@ public class TowerOfHanoi extends JPanel {
 	 *          Integer that represents the number of disks.
 	 * @param debug
 	 *          Boolean that represents if the graphic mode is active.
+	 * @param structureType
+	 *          Boolean that represent what structure to use (Array if false or
+	 *          Stack if true).
+	 * @throws Exception
 	 */
-	public TowerOfHanoi(int numberOfDisks, boolean debug) {
+	public TowerOfHanoi(int numberOfDisks, boolean debug, boolean structureType) throws Exception {
 		this.numberOfDisks = numberOfDisks;
 		this.debug = debug;
 
-		if (debug) {
+		if (numberOfDisks < 1) {
+			throw new Exception("Error: Number of disks must be greater than 0.");
+		}
+
+		if (debug || !structureType) {
 			sourcePeg = new ArrayTypePeg('A');
 			auxiliaryPeg = new ArrayTypePeg('B');
 			destinationPeg = new ArrayTypePeg('C');
@@ -91,7 +99,7 @@ public class TowerOfHanoi extends JPanel {
 			this.repaint();
 			paintComponent(this.getGraphics());
 			Thread.sleep(1500);
-			
+
 			System.out.println(System.lineSeparator() + "\t**MOVEMENTS**");
 		}
 
@@ -160,7 +168,11 @@ public class TowerOfHanoi extends JPanel {
 		}
 		else {
 			moveDisks(numberOfDisks - 1, sourcePeg, destinationPeg, auxiliaryPeg);
-			moveDisks(1, sourcePeg, auxiliaryPeg, destinationPeg);
+
+			// moveDisks(1, sourcePeg, auxiliaryPeg, destinationPeg);
+			destinationPeg.push(sourcePeg.pop());
+			numberOfMovements++;
+
 			moveDisks(numberOfDisks - 1, auxiliaryPeg, sourcePeg, destinationPeg);
 		}
 	}

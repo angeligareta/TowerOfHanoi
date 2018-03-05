@@ -84,9 +84,10 @@ public class StartTowerOfHanoi extends Thread {
 
 	/** Shows the Help. */
 	private static void showHelp() {
-		System.out.println("Tower of Hanoi must recieve 1 or 2 parameters:");
+		System.out.println("Tower of Hanoi must recieve 1, 2 or 3 parameters:");
 		System.out.println("\tThe first one is the number of disks.");
 		System.out.println("\tThe second one is the debug mode. (optional)");
+		System.out.println("\tThe third one is the structure type. (0 -> Array, 1 -> Stack)");
 	}
 
 	/**
@@ -95,20 +96,25 @@ public class StartTowerOfHanoi extends Thread {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		if ((args.length > 2) || (args.length < 1)) {
+		if ((args.length > 3) || (args.length < 1)) {
 			showHelp();
 		}
 		else {
-			boolean debug = false;
+			boolean debug = false, structureType = false;
 			int numberOfDisks;
 
-			if ((args.length == 2) && (args[1].equals("1"))) {
-				debug = true;
+			if (args.length > 1) {
+				if (args[1].equals("1")) {
+					debug = true;
+				}
+				if ((args.length > 2) && (args[2].equals("1"))) {
+					structureType = true;
+				}
 			}
 
 			try {
 				numberOfDisks = Integer.parseInt(args[0]);
-				towerOfHanoi = new TowerOfHanoi(numberOfDisks, debug);
+				towerOfHanoi = new TowerOfHanoi(numberOfDisks, debug, structureType);
 
 				if (debug) {
 					showPlayBoard();
