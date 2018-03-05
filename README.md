@@ -173,7 +173,7 @@ representing in the y axis the elapsed time and in the y axis the disks for that
 elapsed time. **We can see that the function is very similar to 2n**, as
 expected.
 
-[CHART](docs/img/chart.jpg)
+![CHART](docs/img/chart.jpg)
 
 If we divide the array elapsed time and the number of movements for all the
 number of disks between 25 and 37, and finally we make the mean we get:
@@ -183,3 +183,8 @@ number of disks between 25 and 37, and finally we make the mean we get:
 **So, if the Hanoi Tower legend is true and we calculate the elapsed time for 64
 disks the result in years would be 4166. However, it’s impossible to move the disks
 manually at that speed, so we are safe!**
+
+## Bibliography
+•	[Recursion Algorithm - Tower of Hanoi](https://www.youtube.com/watch?v=5_6nsViVM00)
+•	[TutorialsPoint](https://www.tutorialspoint.com/data_structures_algorithms/tower_of_hanoi.htm)
+•	[Wikipedia](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
