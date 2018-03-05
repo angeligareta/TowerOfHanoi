@@ -1,4 +1,7 @@
 # Towers Of Hanoi
+Implementation of the **Tower of Hanoi or Tower of Brahma** puzzle in Java.
+It has an UI included and you can choose between Array or Stack for the Peg Structure. Besides
+there is an study of the complexity at docs/report or in the Readme.md.
 [Documentation](https://ull-esit-inf-daa-1718.github.io/ull-esit-inf-daa-1718-pract2-angeligareta/)
 
 ## Author
@@ -178,4 +181,5 @@ number of disks between 25 and 37, and finally we make the mean we get:
 1 Instruction -\> 7.25576E-09
 ```
 **So, if the Hanoi Tower legend is true and we calculate the elapsed time for 64
-disks the result in years would be 4166. However, it
+disks the result in years would be 4166. However, it’s impossible to move the disks
+manually at that speed, so we are safe!**
