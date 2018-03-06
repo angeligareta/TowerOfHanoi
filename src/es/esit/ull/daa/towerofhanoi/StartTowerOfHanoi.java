@@ -114,7 +114,7 @@ public class StartTowerOfHanoi extends Thread {
 
 			try {
 				numberOfDisks = Integer.parseInt(args[0]);
-				towerOfHanoi = new TowerOfHanoi(numberOfDisks, debug, structureType);
+				towerOfHanoi = new TowerOfHanoi(numberOfDisks, debug, false);
 
 				if (debug) {
 					showPlayBoard();
@@ -127,7 +127,12 @@ public class StartTowerOfHanoi extends Thread {
 				}
 
 				long startTime = System.currentTimeMillis();
-				towerOfHanoi.start();
+				if (structureType) {
+					towerOfHanoi.startCiclic();					
+				}
+				else {
+					towerOfHanoi.start();
+				}
 				long endTime = System.currentTimeMillis();
 
 				System.out.println("Total Number of Movements: " + towerOfHanoi.getNumberOfMovements());

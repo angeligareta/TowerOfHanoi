@@ -25,6 +25,8 @@ public abstract class Peg {
 	protected AbstractList<Disk> peg;
 	/** ID of a Peg. */
 	private char pegID;
+	
+	private Peg next;
 
 	/**
 	 * Default constructor. It gives a type to the Abstract structure.
@@ -49,6 +51,7 @@ public abstract class Peg {
 	public Peg(AbstractList<Disk> peg, char pegID) {
 		this.peg = peg;
 		this.pegID = pegID;
+		this.next = next;
 	}
 
 	/**
@@ -99,4 +102,22 @@ public abstract class Peg {
 	 * @return True if the peg is empty.
 	 */
 	public abstract boolean isEmpty();
+
+	/**
+	 * @return the next
+	 */
+	public void setNext(Peg nextPeg) {
+		this.next = nextPeg;
+	}
+
+	/**
+	 * @return the next
+	 */
+	public Peg getNext() {
+		return this.next;
+	}
+	
+	public Peg getLast() {
+		return this.next.getNext();
+	}
 }

@@ -77,7 +77,7 @@ public class TowerOfHanoi extends JPanel {
 		if (debug || !structureType) {
 			sourcePeg = new ArrayTypePeg('A');
 			auxiliaryPeg = new ArrayTypePeg('B');
-			destinationPeg = new ArrayTypePeg('C');
+			destinationPeg = new ArrayTypePeg('C');			
 		}
 		else {
 			sourcePeg = new StackTypePeg('A');
@@ -104,6 +104,23 @@ public class TowerOfHanoi extends JPanel {
 		}
 
 		moveDisks(this.numberOfDisks, this.sourcePeg, this.auxiliaryPeg, this.destinationPeg);
+	}
+	
+	public void startCiclic() throws InterruptedException {
+		if (debug) {
+			Thread.sleep(1000);
+			this.repaint();
+			paintComponent(this.getGraphics());
+			Thread.sleep(1500);
+
+			System.out.println(System.lineSeparator() + "\t**MOVEMENTS**");
+		}
+
+		sourcePeg.setNext(auxiliaryPeg);
+		auxiliaryPeg.setNext(destinationPeg);
+		destinationPeg.setNext(sourcePeg);
+		
+		moveDisksLeft(this.numberOfDisks, this.sourcePeg);
 	}
 
 	/**
@@ -170,9 +187,49 @@ public class TowerOfHanoi extends JPanel {
 			moveDisks(numberOfDisks - 1, auxiliaryPeg, sourcePeg, destinationPeg);
 		}
 		
+	}
+	
+	
+	private void moveDisksLeft(int numberOfDisks, Peg peg)
+			throws InterruptedException {
+		if (numberOfDisks == 1) {
+			numberOfMovements++;
+			peg.getLast().push(peg.pop());
+			
+			if (debug) { showPegs(peg.getID(), peg.getLast().getID()); }
+		}
+		else {
+			moveDisksLeft(numberOfDisks - 1, peg);
+			moveDisksRight(1, peg);
+			moveDisksRight(numberOfDisks - 1, peg.getLast());
+			moveDisksRight(1, peg.getNext());			
+			moveDisksLeft(numberOfDisks - 1, peg);
+		}
 		
 	}
 	
+	private void moveDisksRight(int numberOfDisks, Peg peg)
+			throws InterruptedException {
+		if (numberOfDisks == 1) {
+			numberOfMovements++;
+			peg.getNext().push(peg.pop());
+			
+			if (debug) { showPegs(peg.getID(), peg.getNext().getID()); }
+		}
+		else {
+			moveDisksLeft(numberOfDisks - 1, peg);
+			moveDisksRight(1, peg);			
+			moveDisksLeft(numberOfDisks - 1, peg.getLast());
+		}
+		
+	}
+	
+	/**
+	 * Method to show the pegs.
+	 * @param sourceID
+	 * @param destinationID
+	 * @throws InterruptedException
+	 */
 	private void showPegs(char sourceID, char destinationID) throws InterruptedException {
 		paintComponent(this.getGraphics());
 		this.getGraphics().drawString(sourceID + " -> " + destinationID, (panelWidth / 2) - 20, 150);
