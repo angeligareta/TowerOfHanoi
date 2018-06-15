@@ -2,7 +2,7 @@
 Implementation of the **Tower of Hanoi or Tower of Brahma** puzzle in Java.
 It has an UI included and you can choose between Array or Stack for the Peg Structure. Besides
 there is an study of the complexity at docs/report or in the Readme.md.
-[Documentation](https://ull-esit-inf-daa-1718.github.io/ull-esit-inf-daa-1718-pract2-angeligareta/)
+[Documentation](https://angeligareta.github.io/TowerOfHanoi/)
 
 ## Author
 [Ángel Igareta](https://github.com/angeligareta)
