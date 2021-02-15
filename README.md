@@ -1,5 +1,5 @@
 <h1 align="center">Tower Of Hanoi</h1>
-<h4 align="center">Implementation of the **Tower of Hanoi or Tower of Brahma** puzzle in Java</h4>
+<h4 align="center">Implementation of the Tower of Hanoi or Tower of Brahma puzzle in Java</h4>
 
 <p align="center">
   <img alt="ULL" src="https://img.shields.io/badge/University-La%20Laguna-%2354048c?style=flat-square" />  
