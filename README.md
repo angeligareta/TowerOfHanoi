@@ -1,11 +1,10 @@
-# Towers Of Hanoi
-Implementation of the **Tower of Hanoi or Tower of Brahma** puzzle in Java.
-It has an UI included and you can choose between Array or Stack for the Peg Structure. Besides
-there is an study of the complexity at docs/report or in the Readme.md.
-[Documentation](https://angeligareta.github.io/TowerOfHanoi/)
+<h1 align="center">Tower Of Hanoi</h1>
+<h4 align="center">Implementation of the **Tower of Hanoi or Tower of Brahma** puzzle in Java</h4>
 
-## Author
-[Ángel Igareta](https://github.com/angeligareta)
+<p align="center">
+  <img alt="ULL" src="https://img.shields.io/badge/University-La%20Laguna-%2354048c?style=flat-square" />  
+  <img alt="License" src="https://img.shields.io/github/license/angeligareta/tower-of-hanoi?style=flat-square" />
+</p>
 
 ## Problem description
 
@@ -184,7 +183,17 @@ number of disks between 25 and 37, and finally we make the mean we get:
 disks the result in years would be 4166. However, it’s impossible to move the disks
 manually at that speed, so we are safe!**
 
-## Bibliography
+## References
 •	[Recursion Algorithm - Tower of Hanoi](https://www.youtube.com/watch?v=5_6nsViVM00)
 •	[TutorialsPoint](https://www.tutorialspoint.com/data_structures_algorithms/tower_of_hanoi.htm)
 •	[Wikipedia](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
+
+## Author
+<p align="center">
+  <a href="https://angeligareta.com" alt="Angel Igareta" target="_blank">
+    <img
+      style="max-width: 420px"
+      src="https://lh3.googleusercontent.com/d/1a8GtvbvSP-kPeUBbFue3xuYZIMffFvFW=w600"
+    />
+  </a>
+</p>
